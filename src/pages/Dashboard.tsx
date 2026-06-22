@@ -89,7 +89,7 @@ export default function Dashboard() {
         {categoryData.length > 0 ? (
           <ResponsiveContainer width="100%" height={240}>
             <PieChart>
-              <Pie data={categoryData} cx="50%" cy="50%" innerRadius={50} outerRadius={90} dataKey="value" paddingAngle={1}>
+              <Pie data={categoryData} cx="50%" cy="50%" innerRadius={50} outerRadius={90} dataKey="value" paddingAngle={0}>
                 {categoryData.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
