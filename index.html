@@ -1,59 +1,19 @@
-<!DOCTYPE html>
-<html lang="tr" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>ParaPocket — Bütçe Takip</title>
-<meta name="description" content="Kişisel bütçe takip uygulaması. Gelir/giderlerini takip et, bütçe yönet.">
-<meta name="theme-color" content="#0d9488">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/icon-192.svg">
-<script data-goatcounter="https://parapocket.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="header">
-  <h1>
-    <svg width="22" height="22" viewBox="0 0 512 512" fill="none">
-      <rect width="512" height="512" rx="80" fill="#0d9488"/>
-      <circle cx="256" cy="220" r="80" fill="none" stroke="#fff" stroke-width="20"/>
-      <path d="M192 220h128M256 140v160" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
-      <path d="M200 320l56 56 56-56" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="160" y="340" width="192" height="56" rx="10" fill="none" stroke="#fff" stroke-width="10"/>
-    </svg>
-    ParaPocket
-  </h1>
-  <div class="header-actions">
-    <button class="header-btn" onclick="navigate('settings')" title="Ayarlar">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="8" cy="6" r="2" fill="currentColor" stroke="none"/><circle cx="16" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="10" cy="18" r="2" fill="currentColor" stroke="none"/></svg>
-    </button>
-  </div>
-</header>
-
-<main class="main" id="view"></main>
-
-<button class="fab" onclick="navigate('add')" aria-label="Yeni işlem">+</button>
-
-<nav class="nav">
-  <button class="nav-btn active" data-view="dashboard" onclick="navigate('dashboard')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-    Ana Sayfa
-  </button>
-  <button class="nav-btn" data-view="transactions" onclick="navigate('transactions')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-    İşlemler
-  </button>
-  <button class="nav-btn" data-view="budgets" onclick="navigate('budgets')">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-    Bütçe
-  </button>
-</nav>
-
-<script type="module" src="app.js"></script>
-</body>
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F5F5F5" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="ParaPocket - Kişisel bütçe takip uygulaması. Gelir/gider takibi, bütçe yönetimi ve finansal görselleştirme." />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.svg" />
+    <title>ParaPocket</title>
+    <script data-goatcounter="https://parapocket.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

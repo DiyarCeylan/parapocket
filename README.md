@@ -1,58 +1,54 @@
-# ParaPocket — Personal Budget Tracker PWA
+# ParaPocket — Kişisel Bütçe Takip PWA
 
 [![MIT](https://img.shields.io/badge/license-MIT-teal)](LICENSE)
 
-A fully client-side Progressive Web App for tracking income and expenses, managing budgets, and visualizing your financial health. All data stays on your device via IndexedDB — no accounts, no cloud sync.
+React + TypeScript ile geliştirilmiş, tamamen istemci taraflı kişisel finans uygulaması. Gelir/gider takibi, bütçe yönetimi, grafiksel raporlar ve finansal hedefler.
 
-## Quick Start
+## Özellikler
+
+- **Dashboard** — Net değer, aylık gelir/gider, son 6 ay çubuk grafik, kategori dağılımı donut grafik
+- **İşlemler** — Arama, filtreleme, CSV/JSON dışa aktarım
+- **Akıllı Kategori Sistemi** — İkonlu modal grid, gelir/gider ayrı kategoriler
+- **Bütçeler** — Kategori bazlı limit, %75/%100 uyarı renkleri, toast bildirim
+- **Tekrarlayan İşlemler** — Günlük/haftalık/aylık/yıllık, otomatik ekleme
+- **Varlıklar** — Banka/nakit/yatırım/kripto varlık takibi, net değer hesaplama
+- **Rapor** — Aylık özet, en çok harcanan kategoriler, geçen aya göre karşılaştırma
+- **Hedefler** — Birikim hedefleri, ilerleme çubuğu, para ekleme
+- **Tema** — Koyu/açık tema desteği
+- **PWA** — Mobil kurulum, çevrimdışı çalışma
+- **Gizlilik** — Tüm veriler localStorage'da, hesap veya bulut yok
+
+## Hızlı Başlangıç
 
 ```bash
 git clone https://github.com/DiyarCeylan/parapocket.git
 cd parapocket
-npx serve .
+npm install
+npm run dev
 ```
 
-Open `http://localhost:3000` in your browser. No build tools or dependencies required.
+Tarayıcıda `http://localhost:5173` açılır.
 
-## Features
+## Derleme
 
-| Feature | Description |
-|---------|-------------|
-| **Dashboard** | Monthly balance, income/expense summary, daily chart, category breakdown |
-| **Transactions** | Full list with search and type filtering |
-| **Add/Edit** | Quick entry with date, category, amount, and notes |
-| **Budgets** | Per-category monthly limits with visual progress bars |
-| **Settings** | Dark/light theme, CSV/JSON export, JSON backup restore |
-| **PWA** | Installable on mobile/desktop, works offline |
-| **Privacy** | No accounts, no cloud, stays on your device |
+```bash
+npm run build
+```
 
-## Design
+Çıktı `dist/` klasöründe oluşur. Statik sunucuyla serve edilebilir:
 
-- **Color palette** — Teal (`#0d9488`), Amber (`#d97706`), Emerald (`#059669`), Rose (`#e11d48`)
-- **Typography** — Premium system font stack with uppercase labels
-- **Icons** — Hand-crafted SVGs (no icon library dependencies)
-- **Theme** — Dark/light mode with smooth CSS transitions
-- **Layout** — Mobile-first responsive with fixed bottom navigation
+```bash
+npx serve dist
+```
 
-## Tech Stack
+## Teknoloji
 
-- **Vanilla JS** (ES Modules) — no frameworks, no build step
-- **IndexedDB** — offline-first data persistence
-- **SVG Charts** — hand-drawn bar and category charts
-- **Service Worker** — full offline support with dynamic path detection
-- **GoatCounter** — privacy-friendly optional analytics
-
-## Deployment (GitHub Pages)
-
-1. Push the repo to GitHub
-2. Go to **Settings → Pages**, set **Branch** to `main` and folder to `/ (root)`
-3. Click **Save**
-
-The Service Worker auto-detects both local and GitHub Pages environments.
-
-## Roadmap
-
-- [ ] Monthly PDF report export
-- [ ] Recurring transactions (subscriptions)
-- [ ] Multi-currency support
-- [ ] Account/balance management
+| Teknoloji | Amaç |
+|-----------|------|
+| React 19 | UI framework |
+| TypeScript | Tip güvenliği |
+| Vite | Build aracı |
+| Recharts | Grafikler |
+| React Router | Sayfa yönlendirme |
+| localStorage | Veri depolama |
+| Service Worker | Çevrimdışı destek |
