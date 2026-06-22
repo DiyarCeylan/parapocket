@@ -1,4 +1,4 @@
-const CACHE = 'parapocket-v1';
+const CACHE = 'parapocket-v2';
 const BASE = (() => {
   const p = self.location.pathname;
   const i = p.lastIndexOf('/');
