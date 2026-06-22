@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ParaPocket — Bütçe Takip</title>
+<meta name="description" content="Kişisel bütçe takip uygulaması. Gelir/giderlerini takip et, bütçe yönet.">
+<meta name="theme-color" content="#6C5CE7">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
+<script data-goatcounter="https://parapocket.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>
+    <svg width="22" height="22" viewBox="0 0 512 512" fill="none">
+      <rect width="512" height="512" rx="80" fill="#6C5CE7"/>
+      <circle cx="256" cy="220" r="80" fill="none" stroke="#fff" stroke-width="20"/>
+      <path d="M192 220h128M256 140v160" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+      <path d="M200 320l56 56 56-56" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="160" y="340" width="192" height="56" rx="10" fill="none" stroke="#fff" stroke-width="10"/>
+    </svg>
+    ParaPocket
+  </h1>
+  <div class="header-actions">
+    <button class="header-btn" onclick="navigate('settings')" title="Ayarlar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="main" id="view"></main>
+
+<button class="fab" onclick="navigate('add')" aria-label="Yeni işlem">+</button>
+
+<nav class="nav">
+  <button class="nav-btn active" data-view="dashboard" onclick="navigate('dashboard')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    Ana Sayfa
+  </button>
+  <button class="nav-btn" data-view="transactions" onclick="navigate('transactions')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    İşlemler
+  </button>
+  <button class="nav-btn" data-view="budgets" onclick="navigate('budgets')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    Bütçe
+  </button>
+</nav>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
