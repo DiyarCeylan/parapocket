@@ -1,4 +1,5 @@
 import { formatCurrency, formatDate } from './format.js';
+import { generateId } from './sanitize.js';
 
 export function exportCSV(transactions) {
   const rows = [['Tarih', 'Tür', 'Kategori', 'Tutar', 'Not']];
@@ -32,7 +33,7 @@ export function importJSON(text) {
       if (!['income', 'expense'].includes(item.type)) throw new Error('Geçersiz işlem türü');
       if (typeof item.amount !== 'number' || item.amount <= 0) throw new Error('Geçersiz tutar');
       if (typeof item.category !== 'string' || !item.category.trim()) throw new Error('Geçersiz kategori');
-      item.id = crypto.randomUUID();
+      item.id = generateId();
     }
     return data;
   } catch (e) {

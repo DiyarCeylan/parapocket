@@ -33,12 +33,12 @@ export async function renderDashboard() {
     <div class="summary-grid">
       <div class="summary-card">
         <div class="summary-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Toplam Gelir</div>
-        <div class="summary-card-value" style="color:var(--green)">${formatCurrency(allIncome)}</div>
+        <div class="summary-card-value" style="color:var(--emerald)">${formatCurrency(allIncome)}</div>
         <div class="summary-card-label">Tüm zamanlar</div>
       </div>
       <div class="summary-card">
         <div class="summary-card-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Toplam Gider</div>
-        <div class="summary-card-value" style="color:var(--red)">${formatCurrency(allExpense)}</div>
+        <div class="summary-card-value" style="color:var(--rose)">${formatCurrency(allExpense)}</div>
         <div class="summary-card-label">Tüm zamanlar</div>
       </div>
     </div>
@@ -92,8 +92,8 @@ function renderMonthChart(transactions) {
     return `
       <g>
         <text x="${x}" y="${h - 4}" text-anchor="middle" font-size="9" fill="var(--text3)">${htmlEscape(d)}</text>
-        <rect x="${x - bw - 1}" y="${h - 16 - ih}" width="${bw}" height="${ih}" rx="2" fill="var(--green)" opacity=".8"/>
-        <rect x="${x + 1}" y="${h - 16 - eh}" width="${bw}" height="${eh}" rx="2" fill="var(--red)" opacity=".8"/>
+        <rect x="${x - bw - 1}" y="${h - 16 - ih}" width="${bw}" height="${ih}" rx="2" fill="var(--emerald)" opacity=".8"/>
+        <rect x="${x + 1}" y="${h - 16 - eh}" width="${bw}" height="${eh}" rx="2" fill="var(--rose)" opacity=".8"/>
       </g>`;
   }).join('');
 
@@ -104,8 +104,8 @@ function renderMonthChart(transactions) {
       ${bars}
     </svg>
     <div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:12px;color:var(--text2)">
-      <span><span style="color:var(--green)">●</span> Gelir</span>
-      <span><span style="color:var(--red)">●</span> Gider</span>
+      <span><span style="color:var(--emerald)">●</span> Gelir</span>
+      <span><span style="color:var(--rose)">●</span> Gider</span>
     </div>`;
 }
 
@@ -123,7 +123,7 @@ function renderCategoryChart(transactions) {
   }
 
   const total = entries.reduce((s, [, v]) => s + v, 0);
-  const colors = ['#6C5CE7', '#00b894', '#fdcb6e', '#ff6b6b', '#74b9ff', '#a29bfe', '#55efc4', '#fab1a0'];
+  const colors = ['#0d9488', '#8b5cf6', '#f59e0b', '#f43f5e', '#3b82f6', '#a855f7', '#10b981', '#ec4899'];
 
   const list = entries.map(([cat, amount], i) => {
     const pct = (amount / total * 100).toFixed(1);

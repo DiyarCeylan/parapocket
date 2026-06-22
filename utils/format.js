@@ -17,6 +17,7 @@ export function formatCurrency(n) {
 export function formatDate(iso) {
   if (!iso) return '';
   const d = new Date(iso + (iso.includes('T') ? '' : 'T00:00:00Z'));
+  if (isNaN(d.getTime())) return iso;
   const now = new Date();
   const diff = (now - d) / 1000;
   if (diff < 60) return 'Az önce';

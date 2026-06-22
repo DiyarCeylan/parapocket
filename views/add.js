@@ -1,7 +1,7 @@
 import { addTransaction, updateTransaction } from '../db.js';
 import { DEFAULT_CATEGORIES } from '../db.js';
 import { todayISO } from '../utils/format.js';
-import { htmlEscape } from '../utils/sanitize.js';
+import { htmlEscape, generateId } from '../utils/sanitize.js';
 
 let editId = null;
 
@@ -81,7 +81,7 @@ window.submitTx = async function(e) {
   }
 
   const tx = {
-    id: editId || crypto.randomUUID(),
+    id: editId || generateId(),
     type,
     amount,
     category,

@@ -1,5 +1,9 @@
 const CACHE = 'parapocket-v1';
-const BASE = self.location.pathname.slice(0, self.location.pathname.lastIndexOf('/'));
+const BASE = (() => {
+  const p = self.location.pathname;
+  const i = p.lastIndexOf('/');
+  return i > 0 ? p.slice(0, i) : '';
+})();
 const ASSETS = [
   BASE + '/',
   BASE + '/index.html',
