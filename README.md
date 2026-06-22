@@ -1,77 +1,72 @@
-# ParaPocket — Personal Budget Tracker PWA
+# ParaPocket — Kişisel Bütçe Takip PWA
 
-A fully client-side Progressive Web App for tracking income and expenses, managing budgets, and visualizing your financial health. All data stays on your device via IndexedDB.
+[![MIT](https://img.shields.io/badge/license-MIT-teal)](LICENSE)
 
-## Features
+Gelir/gider takibi, bütçe yönetimi ve finansal görselleştirme için **tamamen istemci taraflı** bir PWA. Tüm veriler IndexedDB ile sadece cihazınızda kalır, hesap veya bulut senkronizasyonu yok.
 
-- **Dashboard** — Monthly balance, income/expense summary, daily charts, category breakdown, recent transactions
-- **Transactions** — Full list with search and type filtering (income/expense)
-- **Add/Edit** — Add or edit income/expense transactions with date, category, amount, and notes
-- **Budgets** — Set monthly spending limits per category with visual progress bars
-- **Settings** — Dark/light theme toggle, CSV and JSON export, JSON import/backup
-- **PWA** — Installable on mobile/desktop, works offline via Service Worker
-- **Privacy-first** — No accounts, no cloud sync, no data leaves your device
+## İçindekiler
 
-## Tech Stack
+- [Hızlı Başlangıç](#hızlı-başlangıç)
+- [Özellikler](#özellikler)
+- [Tasarım](#tasarım)
+- [Teknik Altyapı](#teknik-altyapı)
+- [Dağıtım](#dağıtım-github-pages)
+- [Yol Haritası](#yol-haritası)
+- [Lisans](#lisans)
 
-- **Vanilla JS** (ES Modules) — no frameworks, no build step
-- **IndexedDB** — offline-first data persistence
-- **SVG Charts** — hand-drawn bar charts and category breakdowns
-- **Service Worker** — full offline support with dynamic path detection
-- **GoatCounter** — privacy-friendly analytics (optional, no cookies)
-
-## Design
-
-- **Color palette** — Teal (`#0d9488`), Amber (`#d97706`), Emerald (`#059669`), Rose (`#e11d48`)
-- **Typography** — Premium system font stack with uppercase labels and generous spacing
-- **Icons** — Hand-crafted SVG icons (no icon library dependencies)
-- **Theme** — Dark/light mode with smooth CSS transitions
-- **Layout** — Mobile-first responsive with fixed bottom navigation
-
-## Usage
-
-Open the app and start adding transactions. All data is stored locally in your browser's IndexedDB.
-
-### Export/Import
-
-Go to Settings to:
-- **Export CSV** — open in Excel or Google Sheets
-- **Export JSON** — full backup of all data
-- **Import JSON** — restore from a previous backup
-
-## Development
-
-No build tools required. Serve the directory with any static server:
+## Hızlı Başlangıç
 
 ```bash
-# Clone the repo
 git clone https://github.com/DiyarCeylan/parapocket.git
 cd parapocket
-
-# Start local server
 npx serve .
 ```
 
-Then open `http://localhost:3000` in your browser.
+Tarayıcıda `http://localhost:3000` açılır. Hiçbir build aracı veya bağımlılık gerekmez.
 
-### Hard Refresh
+## Özellikler
 
-If you see cached assets after updates, do a hard refresh:
-- **Windows/Linux**: `Ctrl+Shift+R`
-- **macOS**: `Cmd+Shift+R`
+| Özellik | Açıklama |
+|---------|----------|
+| **Dashboard** | Aylık bakiye, gelir/gider özeti, günlük grafik, kategori dağılımı |
+| **İşlemler** | Arama ve filtreleme ile tüm işlem listesi |
+| **Ekle/Düzenle** | Tarih, kategori, tutar ve not ile hızlı giriş |
+| **Bütçeler** | Kategori bazlı aylık limit ve görsel ilerleme çubuğu |
+| **Ayarlar** | Koyu/açık tema, CSV/JSON dışa aktarım, JSON yedekten geri yükleme |
+| **PWA** | Mobil/masaüstü kurulum, çevrimdışı çalışma |
+| **Gizlilik** | Hesap yok, bulut yok, cihazında kalır |
 
-Or clear site data via DevTools → Application → Clear site data.
+## Tasarım
 
-## Deployment (GitHub Pages)
+- **Renk paleti** — Teal (`#0d9488`), Amber (`#d97706`), Emerald (`#059669`), Rose (`#e11d48`)
+- **Tipografi** — Premium sistem font stack, uppercase etiketler
+- **İkonlar** — El yapımı SVG ikonlar (kütüphane bağımlılığı yok)
+- **Tema** — Koyu/açık mod, yumuşak CSS geçişleri
+- **Düzen** — Mobil öncelikli responsive, sabit alt navigasyon
 
-1. Push the `parapocket/` directory to a GitHub repo
-2. Go to **Settings → Pages**
-3. Under **Branch**, select `main` and folder `/ (root)`
-4. Click **Save**
-5. Your app will be live at `https://<username>.github.io/<repo>/`
+## Teknik Altyapı
 
-The Service Worker automatically detects the correct base path for both local and GitHub Pages environments.
+- **Vanilla JS** (ES Modules) — framework veya build adımı yok
+- **IndexedDB** — çevrimdışı öncelikli veri depolama
+- **SVG Grafikler** — elle çizilmiş bar ve kategori grafikleri
+- **Service Worker** — dinamik path algılama ile tam çevrimdışı destek
+- **GoatCounter** — gizlilik dostu isteğe bağlı analitik
 
-## License
+## Dağıtım (GitHub Pages)
 
-MIT
+1. Depoyu GitHub'a push et
+2. **Settings → Pages** altında **Branch** olarak `main` ve folder `/ (root)` seç
+3. **Save** ile canlıya al
+
+Service Worker hem local hem GitHub Pages ortamını otomatik algılar.
+
+## Yol Haritası
+
+- [ ] Aylık PDF rapor çıktısı
+- [ ] Tekrarlanan işlemler (abonelikler için)
+- [ ] Çoklu para birimi desteği
+- [ ] Hesap/bakiye yönetimi
+
+## Lisans
+
+MIT — dilediğin gibi kullan, değiştir, dağıt.
