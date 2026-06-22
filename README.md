@@ -52,13 +52,6 @@ cd parapocket
 npx serve .
 ```
 
-### Local Server
-
-```bash
-# With explicit path
-npx serve "C:\Users\diyar\OneDrive\Masaüstü\OpenCode'un Klasörü\parapocket"
-```
-
 Then open `http://localhost:3000` in your browser.
 
 ### Hard Refresh
