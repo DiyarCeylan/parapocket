@@ -1,20 +1,10 @@
-# ParaPocket — Kişisel Bütçe Takip PWA
+# ParaPocket — Personal Budget Tracker PWA
 
 [![MIT](https://img.shields.io/badge/license-MIT-teal)](LICENSE)
 
-Gelir/gider takibi, bütçe yönetimi ve finansal görselleştirme için **tamamen istemci taraflı** bir PWA. Tüm veriler IndexedDB ile sadece cihazınızda kalır, hesap veya bulut senkronizasyonu yok.
+A fully client-side Progressive Web App for tracking income and expenses, managing budgets, and visualizing your financial health. All data stays on your device via IndexedDB — no accounts, no cloud sync.
 
-## İçindekiler
-
-- [Hızlı Başlangıç](#hızlı-başlangıç)
-- [Özellikler](#özellikler)
-- [Tasarım](#tasarım)
-- [Teknik Altyapı](#teknik-altyapı)
-- [Dağıtım](#dağıtım-github-pages)
-- [Yol Haritası](#yol-haritası)
-- [Lisans](#lisans)
-
-## Hızlı Başlangıç
+## Quick Start
 
 ```bash
 git clone https://github.com/DiyarCeylan/parapocket.git
@@ -22,51 +12,47 @@ cd parapocket
 npx serve .
 ```
 
-Tarayıcıda `http://localhost:3000` açılır. Hiçbir build aracı veya bağımlılık gerekmez.
+Open `http://localhost:3000` in your browser. No build tools or dependencies required.
 
-## Özellikler
+## Features
 
-| Özellik | Açıklama |
-|---------|----------|
-| **Dashboard** | Aylık bakiye, gelir/gider özeti, günlük grafik, kategori dağılımı |
-| **İşlemler** | Arama ve filtreleme ile tüm işlem listesi |
-| **Ekle/Düzenle** | Tarih, kategori, tutar ve not ile hızlı giriş |
-| **Bütçeler** | Kategori bazlı aylık limit ve görsel ilerleme çubuğu |
-| **Ayarlar** | Koyu/açık tema, CSV/JSON dışa aktarım, JSON yedekten geri yükleme |
-| **PWA** | Mobil/masaüstü kurulum, çevrimdışı çalışma |
-| **Gizlilik** | Hesap yok, bulut yok, cihazında kalır |
+| Feature | Description |
+|---------|-------------|
+| **Dashboard** | Monthly balance, income/expense summary, daily chart, category breakdown |
+| **Transactions** | Full list with search and type filtering |
+| **Add/Edit** | Quick entry with date, category, amount, and notes |
+| **Budgets** | Per-category monthly limits with visual progress bars |
+| **Settings** | Dark/light theme, CSV/JSON export, JSON backup restore |
+| **PWA** | Installable on mobile/desktop, works offline |
+| **Privacy** | No accounts, no cloud, stays on your device |
 
-## Tasarım
+## Design
 
-- **Renk paleti** — Teal (`#0d9488`), Amber (`#d97706`), Emerald (`#059669`), Rose (`#e11d48`)
-- **Tipografi** — Premium sistem font stack, uppercase etiketler
-- **İkonlar** — El yapımı SVG ikonlar (kütüphane bağımlılığı yok)
-- **Tema** — Koyu/açık mod, yumuşak CSS geçişleri
-- **Düzen** — Mobil öncelikli responsive, sabit alt navigasyon
+- **Color palette** — Teal (`#0d9488`), Amber (`#d97706`), Emerald (`#059669`), Rose (`#e11d48`)
+- **Typography** — Premium system font stack with uppercase labels
+- **Icons** — Hand-crafted SVGs (no icon library dependencies)
+- **Theme** — Dark/light mode with smooth CSS transitions
+- **Layout** — Mobile-first responsive with fixed bottom navigation
 
-## Teknik Altyapı
+## Tech Stack
 
-- **Vanilla JS** (ES Modules) — framework veya build adımı yok
-- **IndexedDB** — çevrimdışı öncelikli veri depolama
-- **SVG Grafikler** — elle çizilmiş bar ve kategori grafikleri
-- **Service Worker** — dinamik path algılama ile tam çevrimdışı destek
-- **GoatCounter** — gizlilik dostu isteğe bağlı analitik
+- **Vanilla JS** (ES Modules) — no frameworks, no build step
+- **IndexedDB** — offline-first data persistence
+- **SVG Charts** — hand-drawn bar and category charts
+- **Service Worker** — full offline support with dynamic path detection
+- **GoatCounter** — privacy-friendly optional analytics
 
-## Dağıtım (GitHub Pages)
+## Deployment (GitHub Pages)
 
-1. Depoyu GitHub'a push et
-2. **Settings → Pages** altında **Branch** olarak `main` ve folder `/ (root)` seç
-3. **Save** ile canlıya al
+1. Push the repo to GitHub
+2. Go to **Settings → Pages**, set **Branch** to `main` and folder to `/ (root)`
+3. Click **Save**
 
-Service Worker hem local hem GitHub Pages ortamını otomatik algılar.
+The Service Worker auto-detects both local and GitHub Pages environments.
 
-## Yol Haritası
+## Roadmap
 
-- [ ] Aylık PDF rapor çıktısı
-- [ ] Tekrarlanan işlemler (abonelikler için)
-- [ ] Çoklu para birimi desteği
-- [ ] Hesap/bakiye yönetimi
-
-## Lisans
-
-MIT — dilediğin gibi kullan, değiştir, dağıt.
+- [ ] Monthly PDF report export
+- [ ] Recurring transactions (subscriptions)
+- [ ] Multi-currency support
+- [ ] Account/balance management
