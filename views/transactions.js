@@ -1,5 +1,5 @@
 import { getAllTransactions, deleteTransaction } from '../db.js';
-import { formatCurrency, formatDate, getCategoryIcon } from '../utils/format.js';
+import { formatCurrency, formatDate, getCategoryColor } from '../utils/format.js';
 import { htmlEscape } from '../utils/sanitize.js';
 
 let currentFilter = 'all';
@@ -77,11 +77,11 @@ async function renderList(all) {
 
   const dates = Object.keys(groups).sort().reverse();
   el.innerHTML = dates.map(date => `
-    <div style="font-size:12px;font-weight:600;color:var(--text3);padding:12px 0 6px">${formatDate(date)}</div>
+    <div class="date-group-header">${formatDate(date)}</div>
     ${groups[date].map(t => {
-      const icon = getCategoryIcon(t.category);
+      const color = getCategoryColor(t.category);
       return `<div class="transaction-item" data-id="${htmlEscape(t.id)}">
-        <div class="tx-icon ${t.type}">${icon}</div>
+        <div class="tx-icon" style="background:${color}"></div>
         <div class="tx-info">
           <div class="tx-category">${htmlEscape(t.category)}</div>
           <div class="tx-note">${t.note ? htmlEscape(t.note) : ''}</div>
@@ -89,7 +89,7 @@ async function renderList(all) {
         <div style="text-align:right;flex-shrink:0">
           <div class="tx-amount ${t.type}">${t.type === 'income' ? '+' : '-'}${formatCurrency(t.amount)}</div>
         </div>
-        <button class="header-btn delete-tx-btn" data-id="${htmlEscape(t.id)}" style="flex-shrink:0;color:var(--red)" title="Sil">
+        <button class="header-btn delete-tx-btn" data-id="${htmlEscape(t.id)}" style="flex-shrink:0;color:var(--rose)" title="Sil">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
         </button>
       </div>`;

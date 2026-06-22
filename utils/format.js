@@ -1,9 +1,9 @@
 const MONTHS = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
-const CATEGORY_ICONS = {
-  'Maaş': '💰', 'Freelance': '💻', 'Yatırım': '📈', 'Kira Geliri': '🏠',
-  'Yiyecek': '🍕', 'Ulaşım': '🚗', 'Fatura': '📄', 'Eğlence': '🎮',
-  'Sağlık': '💊', 'Alışveriş': '🛍️', 'Eğitim': '📚', 'Diğer': '📌',
-  'Diğer Gelir': '📌'
+const CATEGORY_COLORS = {
+  'Maaş': '#0d9488', 'Freelance': '#8b5cf6', 'Yatırım': '#f59e0b', 'Kira Geliri': '#06b6d4',
+  'Yiyecek': '#f43f5e', 'Ulaşım': '#3b82f6', 'Fatura': '#a855f7', 'Eğlence': '#f97316',
+  'Sağlık': '#10b981', 'Alışveriş': '#ec4899', 'Eğitim': '#6366f1', 'Diğer': '#6b7280',
+  'Diğer Gelir': '#6b7280'
 };
 
 export function formatAmount(n) {
@@ -32,8 +32,8 @@ export function formatMonth(ym) {
   return `${MONTHS[parseInt(m) - 1]} ${y}`;
 }
 
-export function getCategoryIcon(cat) {
-  return CATEGORY_ICONS[cat] || '📌';
+export function getCategoryColor(cat) {
+  return CATEGORY_COLORS[cat] || '#6b7280';
 }
 
 export function currentMonth() {

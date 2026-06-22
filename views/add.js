@@ -16,8 +16,8 @@ export function renderAdd(editData = null) {
     </div>
 
     <div class="type-toggle" id="typeToggle">
-      <button class="type-btn expense ${type === 'expense' ? 'active' : ''}" data-type="expense" onclick="setAddType('expense')">💰 Gider</button>
-      <button class="type-btn income ${type === 'income' ? 'active' : ''}" data-type="income" onclick="setAddType('income')">💵 Gelir</button>
+      <button class="type-btn expense ${type === 'expense' ? 'active' : ''}" data-type="expense" onclick="setAddType('expense')">Gider</button>
+      <button class="type-btn income ${type === 'income' ? 'active' : ''}" data-type="income" onclick="setAddType('income')">Gelir</button>
     </div>
 
     <form id="addForm" onsubmit="return submitTx(event)">

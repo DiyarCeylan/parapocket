@@ -1,5 +1,5 @@
 import { getAllTransactions, getMonthlyTransactions } from '../db.js';
-import { formatCurrency, formatDate, getCategoryIcon, currentMonth, formatMonth } from '../utils/format.js';
+import { formatCurrency, formatDate, getCategoryColor, currentMonth, formatMonth } from '../utils/format.js';
 import { htmlEscape } from '../utils/sanitize.js';
 
 export async function renderDashboard() {
@@ -17,7 +17,7 @@ export async function renderDashboard() {
   document.getElementById('view').innerHTML = `
     <div class="balance-card">
       <div class="balance-label">Toplam Bakiye</div>
-      <div class="balance-amount">${formatCurrency(balance < 0 ? 0 : balance)}</div>
+      <div class="balance-amount ${balance < 0 ? 'negative' : ''}">${formatCurrency(balance)}</div>
       <div class="balance-row">
         <div class="balance-item">
           <div class="balance-item-label">Bu Ay Gelir</div>
@@ -146,9 +146,9 @@ function renderRecentList(transactions) {
   }
 
   el.innerHTML = transactions.map(t => {
-    const icon = getCategoryIcon(t.category);
+    const color = getCategoryColor(t.category);
     return `<div class="transaction-item">
-      <div class="tx-icon ${t.type}">${icon}</div>
+      <div class="tx-icon" style="background:${color}"></div>
       <div class="tx-info">
         <div class="tx-category">${htmlEscape(t.category)}</div>
         <div class="tx-note"><span class="tx-date">${formatDate(t.date)}</span>${t.note ? ' · ' + htmlEscape(t.note) : ''}</div>

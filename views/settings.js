@@ -10,7 +10,7 @@ export async function renderSettings() {
       <h3>Ayarlar</h3>
     </div>
 
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-bottom:16px">
+    <div class="settings-group">
       <div class="settings-item">
         <div>
           <div class="settings-label">Karanlık Tema</div>
@@ -18,7 +18,7 @@ export async function renderSettings() {
         </div>
         <div class="toggle ${isDark ? 'on' : ''}" id="themeToggle" onclick="toggleTheme()"></div>
       </div>
-      <div class="settings-item" style="border-bottom:none">
+      <div class="settings-item">
         <div>
           <div class="settings-label">Toplam İşlem</div>
           <div class="settings-desc">${all.length} kayıt</div>
@@ -26,7 +26,7 @@ export async function renderSettings() {
       </div>
     </div>
 
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-bottom:16px">
+    <div class="settings-group">
       <div class="settings-item">
         <div>
           <div class="settings-label">CSV Dışa Aktar</div>
@@ -34,16 +34,13 @@ export async function renderSettings() {
         </div>
         <button class="btn-outline btn-sm" onclick="exportData('csv')">İndir</button>
       </div>
-      <div class="settings-item" style="border-bottom:none">
+      <div class="settings-item">
         <div>
           <div class="settings-label">JSON Dışa Aktar</div>
           <div class="settings-desc">Tüm veri yedekleme</div>
         </div>
         <button class="btn-outline btn-sm" onclick="exportData('json')">İndir</button>
       </div>
-    </div>
-
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-bottom:16px">
       <div class="settings-item">
         <div>
           <div class="settings-label">JSON İçe Aktar</div>
@@ -53,19 +50,17 @@ export async function renderSettings() {
       </div>
     </div>
 
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:4px 16px;margin-bottom:16px">
-      <div class="settings-item" style="border-bottom:none">
+    <div class="settings-group">
+      <div class="settings-item">
         <div>
-          <div class="settings-label" style="color:var(--red)">Tüm Verileri Sil</div>
+          <div class="settings-label" style="color:var(--rose)">Tüm Verileri Sil</div>
           <div class="settings-desc">Bu işlem geri alınamaz</div>
         </div>
-        <button class="btn-outline btn-sm" style="border-color:var(--red);color:var(--red)" onclick="clearData()">Sil</button>
+        <button class="btn-outline btn-sm" style="border-color:var(--rose);color:var(--rose)" onclick="clearData()">Sil</button>
       </div>
     </div>
 
-    <div style="text-align:center;padding:16px;color:var(--text3);font-size:12px">
-      ParaPocket v1.0 · Tüm veriler cihazında saklanır
-    </div>
+    <div class="app-footer">ParaPocket v1.0 · Tüm veriler cihazında saklanır</div>
   `;
 }
 
